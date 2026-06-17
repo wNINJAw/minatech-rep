@@ -1,0 +1,31 @@
+.impact-section {
+  background-color: var(--color-white);
+}
+
+.impact-card {
+  height: 100%;
+  padding: 35px 25px;
+  border-radius: var(--radius-medium);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.impact-card i {
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.impact-card strong {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.impact-card span {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}

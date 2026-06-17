@@ -1,0 +1,61 @@
+.faq-section {
+  background-color: var(--color-light);
+}
+
+.faq-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-accordion .accordion-item {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.faq-accordion .accordion-button {
+  font-weight: 800;
+  padding: 22px;
+  color: var(--color-dark);
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  background-color: white;
+  color: var(--color-primary);
+}
+
+.faq-accordion .accordion-body {
+  color: var(--color-text);
+  line-height: 1.8;
+  padding: 0 22px 22px;
+}
+
+.final-call {
+  margin: 80px auto 0;
+  max-width: 900px;
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: var(--radius-large);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+}
+
+.final-call h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.final-call p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.final-call .btn-minatech {
+  background: white;
+  color: var(--color-primary);
+}
