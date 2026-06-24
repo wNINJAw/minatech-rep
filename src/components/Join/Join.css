@@ -1,0 +1,29 @@
+.listaSouAluna,
+.listaVoluntario {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-size: 14pt;
+  gap: 10px;
+  list-style-type: "✓   ";
+}
+
+.listaSouAluna {
+  color: var(--accent-color);
+}
+
+.listaSouAluna li span {
+  color: #333333;
+}
+
+.listaVoluntario {
+  color: inherit;
+}
+
+@media (max-width: 576px) {
+  .listaSouAluna,
+  .listaVoluntario {
+    font-size: 12.5pt;
+    padding-left: 24px;
+  }
+}

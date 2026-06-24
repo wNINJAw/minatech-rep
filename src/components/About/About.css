@@ -1,0 +1,36 @@
+.about-image {
+  width: 100%;
+}
+
+.about-title {
+  color: #111111;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.about-numbers {
+  margin-top: 24px;
+}
+
+.quadrinho {
+  align-items: center;
+  background-color: var(--white);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 20px;
+  display: flex;
+  flex: 1 0 230px;
+  flex-direction: column;
+  margin: 0 10px;
+  padding: 20px 40px;
+  text-align: left;
+}
+
+.quadrinho h1 {
+  color: var(--outline-red);
+  font-weight: 700;
+}
+
+.quadrinho span {
+  color: var(--muted-text);
+}
