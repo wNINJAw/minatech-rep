@@ -2,6 +2,41 @@ import "./About.css";
 
 function About() {
   return (
+
+    <section className="container-fluid about-section" id="oProjeto">
+      <div className="container-xxl py-5">
+        <div className="row align-items-start gy-4">
+          <div className="col-lg-6 col-sm-12">
+            <img
+              src="/img/IMG_9604-1-2048x1536.jpg"
+              className="br20 about-image"
+              alt=""
+            />
+          </div>
+
+          <div className="col-lg-6 col-sm-12">
+            <h1 className="fs38pt about-title">Por que o MinaTech existe?</h1>
+            <p>
+              As áreas de Ciência, Tecnologia, Engenharia e Matemática (STEM)
+              são os motores do futuro, mas a presença feminina ainda é
+              minoria, especialmente nas engenharias.
+            </p>
+            <p>
+              Nascido em Florianópolis, nosso propósito é mudar essa realidade
+              desde a base. Acreditamos que o talento está distribuído
+              igualmente, mas as oportunidades não. Nós entramos para nivelar
+              esse jogo para meninas de escolas públicas.
+            </p>
+
+            <div className="row d-flex gap-3 row-gap-3 about-numbers">
+              <div className="quadrinho">
+                <h1>+200</h1>
+                <span>Meninas Impactadas</span>
+              </div>
+              <div className="quadrinho">
+                <h1>100%</h1>
+                <span>Foco em Inclusão</span>
+
     <section id="projeto" className="about-section">
       <div className="container">
         <div className="row align-items-center g-5">
@@ -47,6 +82,7 @@ function About() {
                 <i className="bi bi-geo-alt-fill"></i>
                 <strong>SC</strong>
                 <span>Projeto com origem em Florianópolis</span>
+            
               </div>
             </div>
           </div>

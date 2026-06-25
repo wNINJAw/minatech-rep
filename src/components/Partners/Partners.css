@@ -1,4 +1,33 @@
 .partners-section {
+  margin-top: 20px;
+}
+
+.links {
+  column-gap: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  row-gap: 1rem;
+  text-decoration: none;
+}
+
+.links a,
+.links a:link,
+.links a:visited {
+  color: var(--muted-text);
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+
+.links a:hover {
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+=======
   padding: 55px 0;
   background-color: var(--color-white);
 }

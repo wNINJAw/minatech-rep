@@ -1,45 +1,50 @@
-.navbar-minatech {
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--color-border);
-  padding: 16px 0;
+.header-minatech {
+  background-color: #ffffff !important;
+  height: fit-content;
+  min-height: 80px;
+  position: fixed;
+  top: 0;
+  transition: top 100ms;
+  width: 100%;
+  z-index: 10;
 }
 
-.logo-minatech {
+.header-logo {
+  height: 60px;
+}
+
+.headerNav .nav {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 900;
-  color: var(--color-dark);
-  font-size: 1.35rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.logo-minatech:hover {
-  color: var(--color-primary);
-}
-
-.logo-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-}
-
-.navbar-minatech .nav-link {
-  color: var(--color-dark);
+.headerNav li {
+  font-size: 16px;
   font-weight: 600;
-  margin: 0 8px;
 }
 
-.navbar-minatech .nav-link:hover {
-  color: var(--color-primary);
+.headerNav a,
+.headerNav a:link,
+.headerNav a:visited {
+  color: #000000;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
 }
 
-.btn-header {
-  padding: 10px 20px;
+.headerNav a:hover {
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 576px) {
+  .headerNav .nav {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    justify-content: center;
+  }
 }

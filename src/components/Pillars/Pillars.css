@@ -1,3 +1,40 @@
+.gridBanners {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.gridBanners article {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 25px 30px;
+}
+
+.gridBanners img {
+  width: 80px;
+}
+
+.gridBanners h1 {
+  color: var(--dark-red);
+  font-size: 24pt;
+  margin: 0;
+}
+
+.gridBanners p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .gridBanners {
+    grid-template-columns: 1fr;
+  }
+}
+=======
 .pillars-section {
   background-color: var(--color-white);
 }

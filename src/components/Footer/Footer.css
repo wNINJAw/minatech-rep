@@ -1,3 +1,12 @@
+
+.final-cta {
+  margin-top: 0;
+}
+
+.footer-list {
+  padding-left: 1.5rem;
+}
+=======
 .footer-section {
   background-color: #0b1020;
   color: white;
@@ -56,3 +65,4 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
 }
+

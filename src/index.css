@@ -1,102 +1,198 @@
 :root {
-  --color-primary: #7c3aed;
-  --color-secondary: #ec4899;
-  --color-dark: #101828;
-  --color-text: #475467;
-  --color-light: #f9fafb;
-  --color-white: #ffffff;
-  --color-border: #e5e7eb;
-  --shadow-soft: 0 20px 50px rgba(16, 24, 40, 0.08);
-  --radius-large: 28px;
-  --radius-medium: 18px;
+  --primary-color: #9a3e51;
+  --accent-color: #ff5a79;
+  --dark-red: #522931;
+  --button-red: #ff5a79;
+  --outline-red: #a94255;
+  --text-color: #333333;
+  --muted-text: #444444;
+  --page-bg: #f0f0f0;
+  --white: #ffffff;
+  --shadow-default: 0 2px 6px #00000088;
 }
 
 * {
   box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 }
 
 html {
+  scroll-padding-top: 80px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--color-white);
-  color: var(--color-dark);
+  background-color: var(--page-bg) !important;
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
-section {
-  padding: 90px 0;
+a {
+  color: inherit;
 }
 
-.section-subtitle {
-  color: var(--color-primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.85rem;
+p {
+  line-height: 1.45;
 }
 
-.section-title {
-  font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--color-dark);
-  margin-bottom: 20px;
-}
-
-.section-description {
-  color: var(--color-text);
-  font-size: 1.08rem;
-  line-height: 1.8;
-}
-
-.btn-minatech {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: var(--color-white);
+.headerButton,
+.headerButton:link,
+.headerButton:visited {
+  align-items: center;
+  background-color: var(--button-red);
   border: none;
-  padding: 13px 26px;
-  border-radius: 999px;
-  font-weight: 700;
-  transition: 0.3s ease;
+  border-radius: 500px;
+  color: var(--white);
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.2;
+  min-height: 54px;
+  outline: none;
+  padding: 15px 40px;
   text-decoration: none;
-  display: inline-block;
+  transition: 200ms ease-in-out;
+  white-space: nowrap;
 }
 
-.btn-minatech:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3);
-  color: var(--color-white);
+.headerButton:hover {
+  color: var(--white);
+  cursor: pointer;
+  filter: contrast(1.5);
+  letter-spacing: 0.6px;
 }
 
-.btn-outline-minatech {
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  background-color: transparent;
-  padding: 11px 24px;
-  border-radius: 999px;
-  font-weight: 700;
+.outlinedButton,
+.outlinedButton:link,
+.outlinedButton:visited {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 500px;
+  box-shadow: 0 0 0 2px var(--outline-red) inset;
+  color: var(--outline-red);
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.2;
+  min-height: 54px;
+  outline: none;
+  padding: 15px 40px;
   text-decoration: none;
-  display: inline-block;
-  transition: 0.3s ease;
+  transition: 200ms ease-in-out;
+  white-space: nowrap;
 }
 
-.btn-outline-minatech:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+.outlinedButton:hover {
+  color: var(--outline-red);
+  cursor: pointer;
+  filter: brightness(1.35);
+  letter-spacing: 0.6px;
 }
 
-.card-custom {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-  padding: 30px;
-  height: 100%;
-  box-shadow: var(--shadow-soft);
+.whiteButton {
+  background-color: var(--white);
+  border: none;
+  border-radius: 500px;
+  color: var(--dark-red);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  min-height: 54px;
+  outline: none;
+  padding: 15px 40px;
+  transition: 200ms ease-in-out;
+}
+
+.whiteButton:hover {
+  cursor: pointer;
+  filter: contrast(1.5);
+  letter-spacing: 0.6px;
+}
+
+.boldRedTitle {
+  color: var(--dark-red);
+  font-weight: 600;
+}
+
+.fundoBranco {
+  background-color: var(--white) !important;
+  box-shadow: var(--shadow-default);
+}
+
+.fundoPcbVermelha {
+  background: url("/img/pcbTexture2.png"),
+    linear-gradient(180deg, #8c394a60 20%, #8c394990 100%);
+  background-blend-mode: lighten;
+  box-shadow: var(--shadow-default);
+  color: var(--white) !important;
+}
+
+.fundoGradientevermelho {
+  background: linear-gradient(180deg, #50202a 0%, #783744 100%);
+  box-shadow: var(--shadow-default);
+  color: var(--white);
+}
+
+.fundoPreto {
+  background-color: #000000;
+  color: var(--white);
+}
+
+.br20 {
+  border-radius: 20px;
+}
+
+.fs14pt {
+  font-size: 14pt;
+}
+
+.fs16pt {
+  font-size: 16pt;
+}
+
+.fs32pt {
+  font-size: 32pt;
+}
+
+.fs38pt {
+  font-size: 38pt;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.cor333 {
+  color: #333333;
+}
+
+.corVermelhoMinatech {
+  color: #ed4552;
 }
 
 @media (max-width: 768px) {
-  section {
-    padding: 65px 0;
+  .fs16pt {
+    font-size: 13pt;
+  }
+
+  .fs32pt {
+    font-size: 26pt;
+  }
+
+  .fs38pt {
+    font-size: 30pt;
+  }
+
+  .headerButton,
+  .outlinedButton,
+  .whiteButton {
+    padding: 13px 22px;
+    white-space: normal;
   }
 }
