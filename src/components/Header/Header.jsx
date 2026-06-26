@@ -2,7 +2,7 @@ import "./Header.css";
 
 function Header() {
   return (
-    <header className="container-fluid py-2 header-minatech">
+    <header className="container-fluid py-2">
       <div className="container-xxl">
         <div className="row">
           <div className="col-lg-2 col-sm-12 d-flex justify-content-center align-items-center">
@@ -10,7 +10,7 @@ function Header() {
               <img
                 src="/img/minatech-logo.png"
                 alt="logo minatech"
-                className="header-logo"
+                height="60px"
               />
             </a>
           </div>
@@ -35,8 +35,10 @@ function Header() {
           </div>
 
           <div className="col-lg-2 d-lg-flex d-none justify-content-center align-items-center">
-            <a href="#queroParticipar" className="headerButton">
-              Inscreva-se
+            <a href="#queroParticipar">
+              <button className="headerButton" type="button">
+                Inscreva-se
+              </button>
             </a>
           </div>
         </div>
