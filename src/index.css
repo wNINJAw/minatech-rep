@@ -1,22 +1,27 @@
+/* Variáveis principais de cor usadas no site. */
 :root {
   --primary-color: #9a3e51;
   --accent-color: #ff5a79;
 }
 
+/* Configuração geral de fonte para manter unidade visual. */
 * {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 }
 
+/* Ajusta a rolagem e evita que o menu cubra as seções. */
 html {
   scroll-padding-top: 80px;
   scroll-behavior: smooth;
 }
 
+/* Cor base do fundo da página. */
 body {
   background-color: #f0f0f0 !important;
 }
 
+/* Cabeçalho fixo usado em todas as telas. */
 header {
   background-color: #fff !important;
   position: fixed;
@@ -28,6 +33,7 @@ header {
   z-index: 10;
 }
 
+/* Menu principal de navegação. */
 .nav {
   list-style: none;
   display: flex;
@@ -55,6 +61,7 @@ header {
   cursor: pointer;
 }
 
+/* Botão principal das chamadas para ação. */
 .headerButton {
   outline: none;
   border: none;
@@ -76,6 +83,7 @@ header {
   cursor: pointer;
 }
 
+/* Botão secundário usado no início da página. */
 .outlinedButton {
   outline: none;
   border: none;
@@ -96,6 +104,7 @@ header {
   cursor: pointer;
 }
 
+/* Lista de instituições parceiras. */
 .links {
   list-style: none;
   text-decoration: none;
@@ -122,6 +131,7 @@ header {
   cursor: pointer;
 }
 
+/* Cards pequenos de indicadores do projeto. */
 .quadrinho {
   background-color: #fff;
   display: flex;
@@ -143,6 +153,7 @@ header {
   color: #444;
 }
 
+/* Grade dos pilares do MinaTech. */
 .gridBanners {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -169,6 +180,7 @@ header {
   font-size: 24pt;
 }
 
+/* Lista de benefícios para alunas. */
 .listaSouAluna {
   list-style-type: "✓   ";
   font-size: 14pt;
@@ -183,6 +195,7 @@ header {
   color: #333;
 }
 
+/* Lista de formas de contribuição voluntária. */
 .listaVoluntario {
   list-style-type: "✓   ";
   font-size: 14pt;
@@ -192,6 +205,7 @@ header {
   gap: 10px;
 }
 
+/* Botão claro usado em áreas de fundo escuro. */
 .whiteButton {
   outline: none;
   border: none;
@@ -211,11 +225,13 @@ header {
   cursor: pointer;
 }
 
+/* Classes utilitárias usadas em vários componentes. */
 .boldRedTitle {
   color: #522931;
   font-weight: 600;
 }
 
+/* Fundos reutilizados nas seções do site. */
 .fundoBranco {
   background-color: #fff !important;
   box-shadow: 0 2px 6px #00000088;
@@ -244,6 +260,7 @@ header {
   color: #fff;
 }
 
+/* Imagem principal da seção inicial. */
 .hero-image {
   width: 100%;
   height: 500px;
@@ -252,6 +269,7 @@ header {
   box-shadow: 0 2px 6px #00000088;
 }
 
+/* Classes de tamanho e peso de fonte. */
 .fs14pt {
   font-size: 14pt;
 }
@@ -272,6 +290,7 @@ header {
   font-weight: 600;
 }
 
+/* Cores de apoio do layout. */
 .cor333 {
   color: #333;
 }
@@ -280,6 +299,7 @@ header {
   color: #ed4552;
 }
 
+/* Container da linha do tempo da jornada. */
 .jornada-container {
   padding: 50px 20px;
   max-width: 1000px;
@@ -287,6 +307,7 @@ header {
   font-family: sans-serif;
 }
 
+/* Estrutura central da linha do tempo. */
 .timeline {
   position: relative;
   margin: 0 auto;
@@ -303,6 +324,7 @@ header {
   margin-left: 2px;
 }
 
+/* Itens animados da jornada. */
 .timeline-item {
   padding: 10px 40px;
   position: relative;
@@ -325,6 +347,7 @@ header {
   transform: translateX(50px);
 }
 
+/* Marcador visual de cada etapa da jornada. */
 .timeline-dot {
   position: absolute;
   width: 16px;
@@ -341,6 +364,7 @@ header {
   left: 8px;
 }
 
+/* Caixa de conteúdo de cada etapa. */
 .timeline-content {
   padding: 20px;
   background-color: #00000080;
@@ -348,11 +372,13 @@ header {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Classe adicionada via JavaScript quando o item aparece na tela. */
 .timeline-item.visible {
   opacity: 1;
   transform: translateX(0) !important;
 }
 
+/* Ajustes para a linha do tempo em telas pequenas. */
 @media screen and (max-width: 600px) {
   .timeline::after {
     left: 31px;

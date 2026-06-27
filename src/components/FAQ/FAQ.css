@@ -1,1 +1,48 @@
-/* Estilos globais em src/index.css para espelhar o deploy publicado. */
+/* Cabeçalho da seção de perguntas frequentes. */
+.faq-heading {
+  max-width: 760px;
+  margin: 0 auto 28px;
+}
+
+.faq-heading h2 {
+  color: #522931;
+  font-weight: 700;
+}
+
+.faq-heading p {
+  font-size: 15pt;
+}
+
+/* Campo de busca usado para filtrar perguntas. */
+.faq-search {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 520px;
+  margin: 0 auto 24px;
+  color: #522931;
+  font-weight: 700;
+}
+
+/* Entrada de texto da busca. */
+.faq-search input {
+  border: 1px solid #d8c5ca;
+  border-radius: 14px;
+  padding: 13px 16px;
+  outline: none;
+}
+
+.faq-search input:focus {
+  border-color: #ff5a79;
+  box-shadow: 0 0 0 4px #ff5a7922;
+}
+
+/* Mensagem exibida quando a busca não encontra resultados. */
+.faq-empty {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #fff6f8;
+  color: #522931;
+  text-align: center;
+  font-weight: 700;
+}

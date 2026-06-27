@@ -1,10 +1,12 @@
 import "./About.css";
 
+// Seção que explica a origem e a importância do projeto.
 function About() {
   return (
     <section className="container-fluid" id="oProjeto">
       <div className="container-xxl py-5">
         <div className="row">
+          {/* Foto institucional usada para humanizar a página. */}
           <div className="col-lg-6 col-sm-12">
             <img
               src="/img/IMG_9604-1-2048x1536.jpg"
@@ -14,6 +16,7 @@ function About() {
             />
           </div>
 
+          {/* Texto sobre o problema social que o projeto busca enfrentar. */}
           <div className="col-lg-6 col-sm-12">
             <h1 className="fs38pt">Por que o MinaTech existe?</h1>
             <p>
@@ -28,6 +31,7 @@ function About() {
               esse jogo para meninas de escolas públicas.
             </p>
 
+            {/* Indicadores resumidos de impacto. */}
             <div className="row d-flex gap-3 row-gap-3">
               <div className="quadrinho">
                 <h1>+200</h1>

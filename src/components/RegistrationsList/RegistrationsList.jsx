@@ -4,6 +4,7 @@ import "./RegistrationsList.css";
 function RegistrationsList() {
   const [inscricoes, setInscricoes] = useState([]);
 
+  // Carrega os registros do banco local usado na simulação.
   function carregarInscricoes() {
     const dadosSalvos =
       JSON.parse(localStorage.getItem("inscricoesMinaTech")) || [];
@@ -11,6 +12,7 @@ function RegistrationsList() {
     setInscricoes(dadosSalvos);
   }
 
+  // Remove todos os cadastros salvos no navegador.
   function limparInscricoes() {
     localStorage.removeItem("inscricoesMinaTech");
     setInscricoes([]);
@@ -19,6 +21,7 @@ function RegistrationsList() {
   useEffect(() => {
     carregarInscricoes();
 
+    // Mantém a lista atualizada após o envio do formulário.
     window.addEventListener("inscricaoAtualizada", carregarInscricoes);
 
     return () => {
@@ -54,21 +57,23 @@ function RegistrationsList() {
               <thead>
                 <tr>
                   <th>Nome</th>
-                  <th>Tipo</th>
+                  <th>Perfil</th>
                   <th>E-mail</th>
                   <th>Telefone</th>
                   <th>Cidade</th>
+                  <th>Status</th>
                 </tr>
               </thead>
 
               <tbody>
                 {inscricoes.map((inscricao) => (
                   <tr key={inscricao.id}>
-                    <td>{inscricao.nome}</td>
-                    <td>{inscricao.tipo}</td>
+                    <td>{inscricao.nomeCompleto || inscricao.nome}</td>
+                    <td>{inscricao.perfil || inscricao.tipo}</td>
                     <td>{inscricao.email}</td>
                     <td>{inscricao.telefone}</td>
                     <td>{inscricao.cidade}</td>
+                    <td>{inscricao.status || "Cadastro recebido"}</td>
                   </tr>
                 ))}
               </tbody>

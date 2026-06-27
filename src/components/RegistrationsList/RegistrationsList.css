@@ -1,7 +1,9 @@
+/* Área da lista de cadastros salvos. */
 .registrations-section {
   background-color: var(--color-white);
 }
 
+/* Cabeçalho com título e botão de limpeza. */
 .registrations-header {
   display: flex;
   justify-content: space-between;
@@ -10,6 +12,7 @@
   margin-bottom: 35px;
 }
 
+/* Botão usado para apagar os registros locais. */
 .btn-clear {
   border: none;
   background-color: #fee2e2;
@@ -19,6 +22,7 @@
   font-weight: 700;
 }
 
+/* Mensagem exibida quando não há cadastros. */
 .empty-state {
   background-color: var(--color-light);
   border: 1px dashed var(--color-border);
@@ -29,6 +33,7 @@
   font-weight: 700;
 }
 
+/* Tabela com os registros salvos no navegador. */
 .registrations-table {
   background-color: white;
   border-radius: var(--radius-medium);
@@ -36,11 +41,13 @@
   box-shadow: var(--shadow-soft);
 }
 
+/* Cabeçalho da tabela. */
 .registrations-table thead {
   background-color: var(--color-dark);
   color: white;
 }
 
+/* Ajuste da tabela em telas menores. */
 @media (max-width: 768px) {
   .registrations-header {
     flex-direction: column;

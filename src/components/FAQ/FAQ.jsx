@@ -1,159 +1,230 @@
+import { useMemo, useState } from "react";
 import "./FAQ.css";
 
+// Perguntas organizadas por tema para facilitar leitura e manutenção.
 const groups = [
   {
-    title: "Sobre a Participação e Inscrição",
+    title: "Participação e inscrição",
     id: "accordionParticipacao",
     items: [
       {
         key: "idade",
-        question: "Existe um limite de idade para participar?",
+        question: "Quem pode participar da Jornada MinaTech?",
         answer:
-          "Nosso foco principal é em meninas de 13 à 18 anos que estudam em escola pública, mas aceitamos inscrições de [faixa de idade à definir, NÃO PODE ESQUECER DE MUDAR DEPOIS, TA EU DO FUTURO?!?!]. O importante é a vontade de aprender!",
+          "A Jornada MinaTech é voltada principalmente para meninas de 13 a 18 anos, estudantes de escolas públicas, com interesse em tecnologia, engenharia, ciências exatas, inovação ou áreas STEAM.",
       },
       {
-        key: "selecao",
-        question: "Como funciona o processo de seleção das alunas?",
+        key: "dados-inscricao",
+        question: "Quais dados são solicitados no formulário de inscrição?",
         answer:
-          "O processo de seleção leva em conta [critérios socioeconômicos e o interesse demonstrado no formulário]. Caso o número de inscritas exceda as vagas, realizamos [um sorteio / uma análise de perfil, sla tem q ver c elas la :/].",
+          "O formulário solicita nome completo, idade, escola, série ou ano escolar, cidade, telefone, e-mail, área de interesse e uma breve motivação. Para menores de idade, também são solicitados nome, telefone e e-mail do responsável legal.",
       },
       {
-        key: "certificado",
-        question: "Receberei algum certificado ao final do curso ou workshop?",
+        key: "responsavel",
+        question: "Por que o cadastro pede dados do responsável legal?",
         answer:
-          "Sim! Emitimos certificados digitais para todas as alunas que atingirem a frequência mínima de [75%] nas atividades. Eles são ótimos para enriquecer o currículo e contar como horas complementares na escola ou faculdade.",
+          "Como o programa atende adolescentes, os dados do responsável são necessários para contato, autorização e acompanhamento das participantes menores de 18 anos.",
       },
       {
-        key: "faltas",
-        question: "O que acontece se eu perder uma aula ou encontro?",
+        key: "confirmacao",
+        question: "Como sei que minha inscrição foi enviada?",
         answer:
-          "Pedimos que avise a coordenação com antecedência. O conteúdo [será disponibilizado em nossa plataforma online / poderá ser reposto em monitorias específicas. sla véi ja falei q tem ver q c elas lá :/] para que você não perca o fio da meada.",
+          "Após o envio correto do formulário, a página exibe uma mensagem de confirmação com um número de protocolo. Esse registro fica salvo no navegador para simular o banco de dados local do projeto.",
+      },
+      {
+        key: "lista-espera",
+        question: "O que acontece se as vagas estiverem preenchidas?",
+        answer:
+          "A candidata pode marcar a opção de lista de espera no formulário. Assim, o interesse fica registrado para próximas turmas, oficinas ou atividades relacionadas à Jornada MinaTech.",
       },
     ],
   },
   {
-    title: "Infraestrutura e Logística",
-    id: "accordionLogistica",
+    title: "Cronograma e funcionamento",
+    id: "accordionFuncionamento",
     items: [
       {
-        key: "material",
-        question:
-          "O Minatech oferece o material necessário (computadores, internet)?",
+        key: "cronograma",
+        question: "Como funciona o cronograma da jornada?",
         answer:
-          "Sim. Nos encontros presenciais, disponibilizamos laboratórios equipados. Para as atividades remotas, [temos um programa de empréstimo de equipamentos / oferecemos suporte para acesso em polos parceiros].",
+          "A jornada é organizada em etapas: inscrição, seleção, acolhimento, oficinas práticas, visitas técnicas, mentorias, apoio educacional e encerramento. Datas específicas podem ser divulgadas pela organização conforme a edição do projeto.",
       },
       {
         key: "formato",
         question: "As atividades são presenciais, online ou híbridas?",
         answer:
-          "Atualmente operamos no formato [Híbrido], com aulas online gravadas e encontros presenciais [quinzenais/mensais] para prática e networking.",
+          "O formato pode variar conforme a etapa e a edição. A proposta permite atividades presenciais, encontros online, oficinas, visitas técnicas e mentorias, sempre buscando acessibilidade e segurança para as participantes.",
       },
       {
-        key: "auxilio",
-        question: "O projeto oferece auxílio transporte ou alimentação?",
+        key: "beneficios",
+        question: "Quais benefícios o programa oferece?",
         answer:
-          "Sim, para os encontros presenciais oferecemos [lanche no local] e, dependendo da disponibilidade de verba, [ajuda de custo para o transporte público].",
+          "O MinaTech oferece contato com áreas STEAM, apoio educacional, oficinas práticas, mentorias, inspiração profissional, conexão com universidades, empresas e redes de apoio para ampliar o repertório das participantes.",
+      },
+      {
+        key: "certificado",
+        question: "As participantes recebem certificado?",
+        answer:
+          "A emissão de certificado pode ocorrer conforme a atividade ou edição da jornada, levando em conta participação, presença e critérios definidos pela equipe organizadora.",
       },
     ],
   },
   {
-    title: "Voluntariado e Apoio",
+    title: "Voluntariado e parcerias",
     id: "accordionVoluntariado",
     items: [
       {
-        key: "requisitos",
-        question:
-          "Quais são os requisitos para ser um(a) mentor(a) ou voluntário(a)?",
+        key: "voluntarios",
+        question: "Quem pode se cadastrar como voluntária ou mentora?",
         answer:
-          "Não precisa ser apenas da área técnica. Aceitamos voluntários de RH, Marketing, Design e Gestão. O requisito principal é ter disponibilidade de [X horas por semana] e vontade de impactar vidas.",
+          "Podem se cadastrar pessoas com vontade de contribuir com aulas, mentorias, palestras, organização de eventos, comunicação, carreira ou apoio técnico. Não é necessário atuar somente em programação.",
       },
       {
-        key: "empresa",
-        question: "Como minha empresa pode se tornar uma parceira do Minatech?",
+        key: "parceiros",
+        question: "Como empresas e instituições podem apoiar o projeto?",
         answer:
-          "Empresas podem ajudar através de patrocínio direto, doação de equipamentos usados ou oferecendo horas de mentoria de seus colaboradores. Entre em contato pelo e-mail: parcerias@minatech.org.",
+          "Parceiros podem apoiar com patrocínio, doação de equipamentos ou materiais, espaços para visitas técnicas, palestras, mentorias, divulgação e conexão com oportunidades educacionais ou profissionais.",
       },
       {
-        key: "monitora",
-        question: "Sou estudante universitária, posso atuar como monitora?",
+        key: "contato-humano",
+        question: "E se eu tiver uma proposta específica de apoio?",
         answer:
-          "Com certeza! Adoramos ter estudantes universitárias conosco. É uma excelente forma de praticar o que você aprende na faculdade e ainda ganhar experiência em liderança e ensino.",
+          "Use o formulário de parceria para registrar a proposta e deixe uma mensagem com os detalhes. A equipe também pode ser contatada pelos canais oficiais exibidos no rodapé da página.",
       },
     ],
   },
   {
-    title: "Conteúdo e Carreira",
-    id: "accordionCarreira",
+    title: "Privacidade, imagem e contato",
+    id: "accordionPrivacidade",
     items: [
       {
-        key: "tecnologias",
-        question:
-          "Quais linguagens de programação ou tecnologias são ensinadas?",
+        key: "privacidade",
+        question: "Como os dados do formulário são utilizados?",
         answer:
-          "Focamos em tecnologias com alta demanda no mercado, como [HTML, CSS, JavaScript e lógica de programação com Python]. Também abordamos ferramentas de versionamento como o Git.",
+          "Os dados são utilizados para organizar inscrições, entrar em contato com candidatas, responsáveis, voluntárias e parceiros, além de apoiar a gestão futura do projeto. O envio exige aceite da política de privacidade.",
       },
       {
-        key: "trabalho",
-        question: "O Minatech ajuda na inserção no mercado de trabalho?",
+        key: "imagem",
+        question: "O que significa o consentimento de uso de imagem?",
         answer:
-          "Sim! Temos parcerias com empresas de tecnologia que priorizam nossas alunas em seus processos de seleção para vagas de estágio e nível júnior.",
+          "O campo indica autorização para contato futuro sobre registros audiovisuais das atividades. Ele ajuda a equipe a tratar fotos e vídeos com transparência e responsabilidade.",
       },
       {
-        key: "pos-curso",
-        question: "O projeto oferece acompanhamento de mentoria após as aulas?",
+        key: "erro-formulario",
+        question: "O que fazer se o formulário mostrar erro?",
         answer:
-          "Sim, mantemos uma comunidade de ex-alunas e mentoras ativa, onde continuamos compartilhando vagas, dicas de carreira e realizando encontros de networking.",
+          "Confira os campos destacados, preencha todas as informações obrigatórias, verifique o formato do e-mail e inclua DDD no telefone. Depois, tente enviar novamente.",
+      },
+      {
+        key: "redes",
+        question: "Onde encontro os canais de contato?",
+        answer:
+          "Os canais de contato e redes sociais aparecem no rodapé do site. Eles servem para dúvidas que não foram resolvidas pela página ou para atendimento humano quando necessário.",
       },
     ],
   },
 ];
 
+// Padroniza textos para a busca funcionar com ou sem acentos.
+function normalize(value) {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 function FAQ() {
+  const [search, setSearch] = useState("");
+
+  // Filtra as perguntas conforme a palavra-chave informada pelo usuário.
+  const filteredGroups = useMemo(() => {
+    const term = normalize(search.trim());
+
+    if (!term) {
+      return groups;
+    }
+
+    return groups
+      .map((group) => ({
+        ...group,
+        items: group.items.filter((item) =>
+          normalize(`${group.title} ${item.question} ${item.answer}`).includes(term),
+        ),
+      }))
+      .filter((group) => group.items.length > 0);
+  }, [search]);
+
   return (
     <section className="container-fluid mt-5 pb-5 fundoBranco" id="asDuvidas">
       <div className="container-xxl pt-5">
-        <h2 className="mb-5 text-center">Perguntas Frequentes (FAQ)</h2>
+        <div className="faq-heading text-center">
+          <h2>Perguntas Frequentes (FAQ)</h2>
+          <p>
+            Tire dúvidas sobre participação, inscrições, cronograma,
+            voluntariado, parcerias e privacidade.
+          </p>
+        </div>
 
-        {groups.map((group, groupIndex) => (
-          <div key={group.id}>
-            <h4
-              className={`${groupIndex === 0 ? "mt-4" : "mt-5"} mb-3 boldRedTitle`}
-            >
-              {group.title}
-            </h4>
-            <div className="accordion" id={group.id}>
-              {group.items.map((item) => {
-                const answerId = `ans-${item.key}`;
-                const headingId = `faq-${item.key}`;
+        <label className="faq-search" htmlFor="faqSearch">
+          Buscar no FAQ
+          <input
+            id="faqSearch"
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="Digite uma palavra-chave"
+            type="search"
+            value={search}
+          />
+        </label>
 
-                return (
-                  <div className="accordion-item" key={item.key}>
-                    <h2 className="accordion-header" id={headingId}>
-                      <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target={`#${answerId}`}
-                        aria-expanded="false"
-                        aria-controls={answerId}
-                      >
-                        <strong>{item.question}</strong>
-                      </button>
-                    </h2>
-                    <div
-                      id={answerId}
-                      className="accordion-collapse collapse"
-                      data-bs-parent={`#${group.id}`}
-                      aria-labelledby={headingId}
-                    >
-                      <div className="accordion-body">{item.answer}</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+        {filteredGroups.length === 0 ? (
+          <div className="faq-empty">
+            Nenhuma pergunta encontrada. Entre em contato pelos canais oficiais
+            do projeto.
           </div>
-        ))}
+        ) : (
+          filteredGroups.map((group, groupIndex) => (
+            <div key={group.id}>
+              <h4
+                className={`${
+                  groupIndex === 0 ? "mt-4" : "mt-5"
+                } mb-3 boldRedTitle`}
+              >
+                {group.title}
+              </h4>
+              <div className="accordion" id={group.id}>
+                {group.items.map((item) => {
+                  const answerId = `ans-${item.key}`;
+                  const headingId = `faq-${item.key}`;
+
+                  return (
+                    <div className="accordion-item" key={item.key}>
+                      <h2 className="accordion-header" id={headingId}>
+                        <button
+                          className="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target={`#${answerId}`}
+                          aria-expanded="false"
+                          aria-controls={answerId}
+                        >
+                          <strong>{item.question}</strong>
+                        </button>
+                      </h2>
+                      <div
+                        id={answerId}
+                        className="accordion-collapse collapse"
+                        data-bs-parent={`#${group.id}`}
+                        aria-labelledby={headingId}
+                      >
+                        <div className="accordion-body">{item.answer}</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </section>
   );
