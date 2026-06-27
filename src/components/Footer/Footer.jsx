@@ -1,8 +1,10 @@
 import "./Footer.css";
 
+// Rodapé com chamada final, links e informações de contato.
 function Footer() {
   return (
     <>
+      {/* Chamada final para incentivar a participação no projeto. */}
       <section className="container-fluid fundoPcbVermelha">
         <div className="container-xxl">
           <div className="row">
@@ -23,8 +25,10 @@ function Footer() {
         </div>
       </section>
 
+      {/* Rodapé institucional com resumo, navegação e contato. */}
       <footer className="container-fluid pt-5 fundoPreto">
         <div className="container-xxl d-flex flex-wrap justify-content-center">
+          {/* Resumo da proposta do MinaTech. */}
           <div className="col-lg-6 col-sm-12">
             <img src="/img/minatech-logo.png" width="120px" alt="" />
             <p className="mt-4 fs14pt">
@@ -34,6 +38,7 @@ function Footer() {
             </p>
           </div>
 
+          {/* Links internos para navegação rápida. */}
           <div className="col-lg-3 col-sm-6">
             <h3 className="corVermelhoMinatech">Links Rápidos</h3>
             <ul className="fs14pt">
@@ -44,6 +49,7 @@ function Footer() {
             </ul>
           </div>
 
+          {/* Canais de contato informados ao usuário. */}
           <div className="col-lg-3 col-sm-6">
             <h3 className="corVermelhoMinatech">Contato</h3>
             <ul className="fs14pt">
@@ -55,6 +61,7 @@ function Footer() {
           </div>
         </div>
 
+        {/* Créditos finais do projeto. */}
         <div className="row text-center pt-5 pb-3">
           <hr />
           <div className="col-12">

@@ -1,6 +1,8 @@
 import "./ImpactNumbers.css";
 
+// Componente preparado para exibir indicadores de impacto.
 function ImpactNumbers() {
+  // Dados usados nos cards de indicadores.
   const numbers = [
     {
       value: "+200",
@@ -27,6 +29,7 @@ function ImpactNumbers() {
   return (
     <section className="impact-section">
       <div className="container">
+        {/* Título da seção de impacto social. */}
         <div className="text-center mb-5">
           <span className="section-subtitle">Impacto</span>
 
@@ -39,6 +42,7 @@ function ImpactNumbers() {
         </div>
 
         <div className="row g-4">
+          {/* Cria um card para cada indicador. */}
           {numbers.map((item, index) => (
             <div className="col-md-6 col-lg-3" key={index}>
               <div className="impact-card">

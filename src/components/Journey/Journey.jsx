@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./Journey.css";
 
+// Etapas principais previstas para a Jornada MinaTech.
 const steps = [
   {
     number: "1ª Etapa",
@@ -34,15 +35,19 @@ const steps = [
   },
 ];
 
+// Seção que apresenta o cronograma em formato de linha do tempo.
 function Journey() {
   useEffect(() => {
+    // Seleciona os itens da linha do tempo para aplicar a animação.
     const items = document.querySelectorAll(".timeline-item");
 
+    // Caso o navegador não suporte IntersectionObserver, exibimos tudo.
     if (!("IntersectionObserver" in window)) {
       items.forEach((item) => item.classList.add("visible"));
       return undefined;
     }
 
+    // Observa quando cada etapa aparece na tela.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -54,8 +59,10 @@ function Journey() {
       { threshold: 0.2 },
     );
 
+    // Ativa a observação em todos os itens.
     items.forEach((item) => observer.observe(item));
 
+    // Remove o observador ao sair da página.
     return () => observer.disconnect();
   }, []);
 
@@ -71,6 +78,7 @@ function Journey() {
 
           <section className="circuito-minatech">
             <div className="timeline">
+              {/* Monta cada etapa de forma dinâmica. */}
               {steps.map((step) => (
                 <div className="timeline-item" key={step.number}>
                   <div className="timeline-dot"></div>

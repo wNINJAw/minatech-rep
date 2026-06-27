@@ -1,5 +1,6 @@
 import "./Pillars.css";
 
+// Lista dos pilares que representam as frentes de atuação do projeto.
 const pillars = [
   {
     icon: "/icons/bulb-2-svgrepo-com.svg",
@@ -33,12 +34,14 @@ const pillars = [
   },
 ];
 
+// Renderiza os pilares em cards informativos.
 function Pillars() {
   return (
     <section className="container-fluid pt-4" id="osPilares">
       <div className="container-xxl text-center">
         <div className="row">
           <div className="gridBanners">
+            {/* Cada pilar é exibido com ícone, título e descrição. */}
             {pillars.map((pillar) => (
               <div key={pillar.title}>
                 <img src={pillar.icon} alt="" />

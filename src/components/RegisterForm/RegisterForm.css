@@ -1,45 +1,272 @@
+/* Fundo da área onde o formulário aparece. */
 .register-section {
-  background-color: var(--color-light);
+  background-color: #f0f0f0;
 }
 
-.register-form {
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: var(--color-white);
-  padding: 40px;
-  border-radius: var(--radius-large);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-soft);
+/* Título e texto inicial do formulário. */
+.register-heading {
+  max-width: 760px;
+  margin: 0 auto 32px;
 }
 
-.register-form label {
+.register-heading h1 {
+  color: #522931;
+  font-size: 34pt;
   font-weight: 700;
-  color: var(--color-dark);
-  margin-bottom: 8px;
-  display: block;
 }
 
-.register-form input,
-.register-form select,
-.register-form textarea {
+.register-heading p {
+  font-size: 16pt;
+  margin-bottom: 0;
+}
+
+/* Selo que informa o status das inscrições. */
+.register-status {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background-color: #fff;
+  color: #a94255;
+  font-weight: 700;
+  box-shadow: 0 2px 6px #00000022;
+}
+
+/* Layout com critérios de participação e formulário. */
+.register-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 2fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Blocos visuais do formulário. */
+.register-info,
+.register-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px #00000055;
+}
+
+/* Caixa lateral com critérios de inscrição. */
+.register-info {
+  padding: 28px;
+  border-left: 4px solid #ff5a79;
+}
+
+.register-info h2 {
+  color: #522931;
+  font-size: 22pt;
+  margin-bottom: 18px;
+}
+
+.register-info ul {
+  padding-left: 22px;
+}
+
+.register-info li {
+  margin-bottom: 10px;
+}
+
+.register-card {
+  padding: 28px;
+}
+
+/* Botões de escolha do tipo de cadastro. */
+.profile-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+/* Aparência de cada opção de perfil. */
+.profile-tab {
+  border: 1px solid #edd7dd;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: left;
+  color: #522931;
+  transition: 180ms;
+}
+
+.profile-tab span {
+  display: block;
+  margin-top: 6px;
+  color: #555;
+  font-size: 0.92rem;
+}
+
+/* Destaque do perfil selecionado. */
+.profile-tab-active,
+.profile-tab:hover {
+  border-color: #ff5a79;
+  box-shadow: 0 0 0 3px #ff5a7926;
+}
+
+/* Título interno do formulário. */
+.form-section-title {
+  margin-bottom: 20px;
+}
+
+.form-section-title h2 {
+  color: #522931;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.form-section-title p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+/* Organização dos campos em duas colunas. */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Estrutura padrão de cada campo. */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #522931;
+  font-weight: 700;
+}
+
+/* Campo que ocupa toda a largura. */
+.form-field-full {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+}
+
+/* Aparência padrão dos campos editáveis. */
+.field-control {
   width: 100%;
-  border: 1px solid var(--color-border);
+  border: 1px solid #d8c5ca;
   border-radius: 14px;
   padding: 13px 16px;
   outline: none;
-  color: var(--color-dark);
-  background-color: var(--color-white);
+  color: #222;
+  background-color: #fff;
+  transition: 180ms;
 }
 
-.register-form input:focus,
-.register-form select:focus,
-.register-form textarea:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+/* Destaque quando o campo recebe foco. */
+.field-control:focus {
+  border-color: #ff5a79;
+  box-shadow: 0 0 0 4px #ff5a7922;
 }
 
-.success-message {
-  margin-top: 18px;
-  color: #047857;
+/* Estado visual de erro no campo. */
+.field-control-error {
+  border-color: #ed4552;
+}
+
+/* Mensagem exibida abaixo de campos inválidos. */
+.field-error {
+  color: #b4232f;
+  font-size: 0.92rem;
   font-weight: 700;
+}
+
+/* Caixas extras para responsável legal e consentimentos. */
+.responsible-box,
+.consent-box {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #fff6f8;
+  border: 1px solid #f3c8d0;
+}
+
+.responsible-box h3 {
+  color: #522931;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* Campos de aceite e consentimento. */
+.check-field {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.check-field input {
+  margin-top: 5px;
+  accent-color: #ff5a79;
+}
+
+.check-field-error {
+  color: #b4232f;
+}
+
+/* Resumo da política de privacidade. */
+.privacy-details {
+  margin-top: 14px;
+  color: #333;
+}
+
+.privacy-details summary {
+  color: #522931;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.privacy-details p {
+  margin: 10px 0 0;
+}
+
+/* Mensagens finais de sucesso ou erro. */
+.form-feedback {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.form-feedback-success {
+  background-color: #ecfdf3;
+  color: #027a48;
+}
+
+.form-feedback-error {
+  background-color: #fff1f3;
+  color: #b4232f;
+}
+
+/* Botão final de envio do cadastro. */
+.register-submit {
+  margin-top: 22px;
+}
+
+/* Ajuste do layout em tablets. */
+@media (max-width: 992px) {
+  .register-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajuste do formulário em telas menores. */
+@media (max-width: 768px) {
+  .register-heading h1 {
+    font-size: 28pt;
+  }
+
+  .profile-tabs,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-card,
+  .register-info {
+    padding: 22px;
+  }
 }

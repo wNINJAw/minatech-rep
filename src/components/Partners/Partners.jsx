@@ -1,5 +1,6 @@
 import "./Partners.css";
 
+// Instituições apresentadas como rede de apoio do projeto.
 const partners = [
   "Corali",
   "Engenheiros Sem Fronteiras",
@@ -14,6 +15,7 @@ const partners = [
   "Cursinho Delta",
 ];
 
+// Exibe os parceiros em formato simples e de fácil leitura.
 function Partners() {
   return (
     <section className="container-fluid fundoBranco">
@@ -22,6 +24,7 @@ function Partners() {
           <div className="d-flex flex-column justify-content-center align-items-center m-auto col-12">
             <h5>Apoiado e reconhecido por instituições de peso</h5>
             <ul className="links mt-5">
+              {/* Gera cada item da lista a partir do array de parceiros. */}
               {partners.map((partner) => (
                 <li key={partner}>
                   <a href="#top">{partner}</a>
